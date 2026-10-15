@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Sets the Price of a Prescription? How Five States Regulate the Drug Supply Chain</title>
+<meta name="description" content="How Pennsylvania, Virginia, Ohio, Maryland, and Georgia regulate pharmacy benefit managers, drug prices, and 340B contract pharmacy arrangements. Current as of October 15, 2026.">
+<meta property="og:title" content="Who Sets the Price of a Prescription? How Five States Regulate the Drug Supply Chain">
+<meta property="og:description" content="How five states regulate pharmacy benefit managers, drug prices, and 340B contract pharmacy arrangements.">
+<meta property="og:image" content="https://jphoebus.github.io/state-drug-supply-chain/drug-preview.png">
+<meta property="og:url" content="https://jphoebus.github.io/state-drug-supply-chain/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --limestone: #EDF0F1;
+    --paper: #FFFFFF;
+    --ink: #1B2631;
+    --slate: #52606D;
+    --rule: #CBD2D9;
+    --accent: #1F5C4A;
+    --accent-soft: #DCEBE5;
+    --font: "Public Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--limestone);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .measure { max-width: 68ch; }
+
+  /* Header */
+  header { padding: 64px 0 40px; }
+  h1 {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 18ch;
+  }
+  .lede { font-size: 1.15rem; color: var(--slate); margin: 0; }
+
+  /* Where each state stands */
+  .standing {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 3px solid var(--ink);
+    margin-top: 40px;
+  }
+  .standing div {
+    padding: 16px 16px 20px 0;
+    border-right: 1px solid var(--rule);
+    padding-left: 16px;
+  }
+  .standing div:first-child { padding-left: 0; }
+  .standing div:last-child { border-right: 0; }
+  .standing strong { display: block; font-size: 1.25rem; font-weight: 700; }
+  .standing span { display: block; color: var(--slate); font-size: 0.95rem; }
+  .standing time { display: block; font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: 6px; }
+
+  /* Comparison */
+  section { padding: 48px 0; }
+  h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 20px; align-items: center; }
+  .filters p { margin: 0 8px 0 0; color: var(--slate); font-size: 0.95rem; }
+  .chip {
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+  }
+  .chip[aria-pressed="false"] { background: transparent; color: var(--accent); }
+  .table-scroll {
+    overflow-x: auto;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 0.92rem; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--rule); }
+  thead th {
+    font-size: 1rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--ink);
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+  }
+  tbody th {
+    font-weight: 600;
+    color: var(--slate);
+    width: 170px;
+    position: sticky;
+    left: 0;
+    background: var(--paper);
+  }
+  tr.group th {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  [hidden] { display: none !important; }
+  td.empty { color: var(--slate); font-style: italic; }
+  td.sources a { display: block; word-break: break-word; margin-bottom: 4px; }
+  .status-msg { padding: 24px; color: var(--slate); }
+
+  /* Analysis */
+  .analysis { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .analysis h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 4px; }
+  .analysis p { margin: 0; }
+  .question {
+    margin-top: 32px;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  ul.watch { padding-left: 1.1em; margin: 12px 0 0; }
+  ul.watch li { margin-bottom: 10px; }
+
+  .finding { font-size: 1.15rem; font-weight: 500; border-left: 4px solid var(--accent); padding-left: 20px; margin: 28px 0 0; }
+  .finding + .finding { margin-top: 14px; }
+  .band { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .terms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px 32px; margin-top: 8px; }
+  .terms h3 { font-size: 1.05rem; font-weight: 700; margin: 12px 0 4px; }
+  .terms p { margin: 0; }
+  footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; color: var(--slate); font-size: 0.95rem; }
+  footer p { margin: 0 0 12px; }
+
+  @media (max-width: 800px) {
+    .standing { grid-template-columns: 1fr 1fr; }
+    .standing div { border-right: 0; border-bottom: 1px solid var(--rule); padding-left: 0; }
+    .analysis, .terms { grid-template-columns: 1fr; gap: 16px; }
+    header { padding-top: 40px; }
+  }
+  @media print {
+    .filters { display: none; }
+    body { background: #fff; }
+    .table-scroll { overflow: visible; border: 0; }
+    thead th, tbody th { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Who sets the price of a prescription?</h1>
+    <p class="lede measure">How Pennsylvania, Virginia, Ohio, Maryland, and Georgia regulate the businesses between a drug's manufacturer and the patient: pharmacy benefit managers, drug prices, and 340B contract pharmacy arrangements. Current as of October 15, 2026.</p>
+    <p class="finding measure"><strong>Pharmacy benefit managers:</strong> all five states regulate PBMs through their insurance regulators. The newer laws move from banning specific practices toward setting how PBMs price drugs, usually starting with public plans such as Medicaid and state employee coverage.</p>
+    <p class="finding measure"><strong>Drug prices and 340B:</strong> Maryland is the only one of the five with an affordability board or a contract pharmacy law. Legislatures in the other states have debated both. Virginia's legislature passed affordability board bills three years in a row, and governors of both parties vetoed them. On 340B, Ohio enacted reporting by program participants and Virginia ordered a study.</p>
+
+    <div class="standing" aria-label="Key figures">
+      <div><strong>5 of 5</strong><span>Regulate PBMs through the insurance regulator</span></div>
+      <div><strong>1 of 5</strong><span>Has an affordability board: Maryland</span></div>
+      <div><strong>1 of 5</strong><span>Has a 340B contract pharmacy law: Maryland</span></div>
+      <div><strong>1 of 5</strong><span>Requires manufacturer price reports: Virginia</span></div>
+      <div><strong>3 vetoes</strong><span>Of Virginia board bills, 2024 to 2026, by governors of both parties</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="terms" class="band">
+    <div class="wrap">
+      <h2>Three terms, briefly</h2>
+      <div class="terms">
+        <div>
+          <h3>Pharmacy benefit managers</h3>
+          <p>Companies that run prescription drug benefits for insurers, employers, and public programs. They negotiate rebates with manufacturers, set what pharmacies are paid, and manage formularies, the lists of drugs a plan covers. States regulate them mainly through insurance law.</p>
+        </div>
+        <div>
+          <h3>Affordability boards</h3>
+          <p>State boards that review the cost of specific high-priced drugs. Some only study and recommend. Others can set an upper payment limit, the most that covered purchasers in the state will pay for a drug.</p>
+        </div>
+        <div>
+          <h3>340B contract pharmacies</h3>
+          <p>Under a federal program, drug manufacturers that take part in Medicaid must offer discounted prices to certain hospitals and clinics, which often dispense through outside pharmacies. Since 2020, many manufacturers have limited discounts on drugs sent to those pharmacies; some states have passed laws barring those limits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="comparison">
+    <div class="wrap">
+      <h2>Side-by-side comparison</h2>
+      <p class="measure">Choose which states to compare. On a phone, scroll the table sideways. Where a detail rests on a secondary source rather than a statute, regulation, court order, or legislative record, the table says "as reported."</p>
+      <div class="filters" id="filters" role="group" aria-label="States to compare"><p>Showing:</p><button class="chip" type="button" aria-pressed="true" data-state="pennsylvania">Pennsylvania</button><button class="chip" type="button" aria-pressed="true" data-state="virginia">Virginia</button><button class="chip" type="button" aria-pressed="true" data-state="ohio">Ohio</button><button class="chip" type="button" aria-pressed="true" data-state="maryland">Maryland</button><button class="chip" type="button" aria-pressed="true" data-state="georgia">Georgia</button></div>
+      <div class="table-scroll" tabindex="0" aria-label="Comparison table">
+        <table id="table">
+<thead><tr><th scope="col"></th>
+<th scope="col" data-state="pennsylvania">Pennsylvania</th>
+<th scope="col" data-state="virginia">Virginia</th>
+<th scope="col" data-state="ohio">Ohio</th>
+<th scope="col" data-state="maryland">Maryland</th>
+<th scope="col" data-state="georgia">Georgia</th>
+</tr></thead><tbody>
+<tr class="group"><th colspan="6" scope="colgroup">Pharmacy benefit managers</th></tr>
+<tr><th scope="row">Regulator and license</th>
+<td data-state="pennsylvania">Registration with the Insurance Department under Act 77 of 2024, which applies to fully insured plans.</td>
+<td data-state="virginia">License from the State Corporation Commission&#x27;s Bureau of Insurance (Va. Code § 38.2-3465 et seq.).</td>
+<td data-state="ohio">HB 229 (2026) creates a PBM license under the Superintendent of Insurance (R.C. Chapter 3957), effective June 30, 2026, with the license required from July 1, 2027.</td>
+<td data-state="maryland">Registration with the Maryland Insurance Administration (Insurance § 15-1601 et seq.).</td>
+<td data-state="georgia">License from the Insurance Commissioner (O.C.G.A. Title 33, Chapter 64).</td>
+</tr>
+<tr><th scope="row">Key rules</th>
+<td data-state="pennsylvania">Limits on steering patients to PBM-owned pharmacies and on clawbacks; network adequacy standards; annual PBM transparency reports (first due July 1, 2026). Spread pricing is to be studied rather than banned.</td>
+<td data-state="virginia">Spread pricing banned for insurers and their PBMs.</td>
+<td data-state="ohio">Medicaid has used a single state PBM since October 2022 (R.C. 5167.24).</td>
+<td data-state="maryland">A PBM may not require use of a pharmacy it or an affiliate owns, except for specialty drugs (§ 15-1611.1); rules on affiliate reimbursement and generic pricing lists. Medicaid managed care contracts bar spread pricing.</td>
+<td data-state="georgia">PBMs must charge state and local government plans the price paid to the pharmacy and must offer plans 100% rebate pass-through; they report payments 10% or more above or below national average acquisition cost.</td>
+</tr>
+<tr><th scope="row">2025–26 changes</th>
+<td data-state="pennsylvania">HB 2050 would bar PBMs from owning pharmacies; referred to House Health in November 2025 (as reported).</td>
+<td data-state="virginia">2026: SB 669 and HB 830 require pass-through pricing and full rebate pass-through starting July 1, 2027. 2025: HB 2610 and SB 875 direct a single Medicaid PBM by July 1, 2026.</td>
+<td data-state="ohio">HB 229 (2026) PBM licensing; PBM provisions in the 2025 budget bill, HB 96 (as reported).</td>
+<td data-state="maryland">A 2025 PBM workgroup (Ch. 730) reports by Dec. 31, 2026.</td>
+<td data-state="georgia">HB 196 (2025) sets acquisition cost plus a dispensing fee for state employee plans from 2026 (as reported). SB 91, limiting state plan contracts with PBMs that own pharmacies, did not pass (as reported).</td>
+</tr>
+<tr class="group"><th colspan="6" scope="colgroup">Drug prices</th></tr>
+<tr><th scope="row">Affordability board</th>
+<td data-state="pennsylvania">None. No board bill found in the 2025–26 session; earlier bills were introduced in 2019–20 and 2021–22.</td>
+<td data-state="virginia">None. The legislature passed board bills in 2024, 2025 and 2026; each was vetoed (Gov. Youngkin in 2024 and 2025; Gov. Spanberger on May 19, 2026).</td>
+<td data-state="ohio">None. HB 890 (2026) would create a board with payment limits across payers; it is in the House Insurance Committee.</td>
+<td data-state="maryland">Yes, since 2019. It can set upper payment limits for state and local government purchasers; a 2025 law (Ch. 610/611) allows wider use once two limits have been in effect for a year. It has voted limits for Jardiance and Ozempic; governments may begin applying them Jan. 1, 2027 and must after Jan. 1, 2028. The regulations are not yet listed as final.</td>
+<td data-state="georgia">None. HB 931 (2026) proposed a board with payment limits and did not pass (as reported).</td>
+</tr>
+<tr><th scope="row">Manufacturer price reporting</th>
+<td data-state="pennsylvania">No manufacturer price-reporting law.</td>
+<td data-state="virginia">Yes, since 2021 (Va. Code § 54.1-3442.02). Manufacturers report each year on brand drugs with a list price of $100 or more and price increases of 15% or more (generics: 200% or more). Filings are confidential (Va. Code § 32.1-23.4); aggregate data is public.</td>
+<td data-state="ohio">No manufacturer price-reporting law found.</td>
+<td data-state="maryland">No routine manufacturer price-increase reports; the affordability board identifies drugs for cost review using launch-price and price-increase thresholds.</td>
+<td data-state="georgia">No manufacturer price-reporting law found.</td>
+</tr>
+<tr class="group"><th colspan="6" scope="colgroup">340B discounts</th></tr>
+<tr><th scope="row">Contract pharmacy law</th>
+<td data-state="pennsylvania">No law. HB 2797, introduced Sept. 29, 2026, addresses 340B reimbursement and distribution protections; it is in House Human Services.</td>
+<td data-state="virginia">No law. A 2024 bill (SB 119) was vetoed (as reported). A 2026 law (SB 278, Ch. 887) creates a 340B work group, with a report due Nov. 1, 2026.</td>
+<td data-state="ohio">No law; SB 198 and HB 276 are in committee. The 2025 budget added annual 340B reporting by covered entities (R.C. 3701.88).</td>
+<td data-state="maryland">Yes, 2024 (HB 1056, Ch. 962; effective July 1, 2024). Attorney General enforcement; $5,000 per package. A Fourth Circuit panel vacated the denial of a preliminary injunction and remanded in April 2026; the full court granted rehearing in late May, with no argument date confirmed. The law remains in effect (as reported).</td>
+<td data-state="georgia">No law. HB 139 (2025) would have barred manufacturer and wholesaler restrictions; it did not advance (as reported).</td>
+</tr>
+<tr><th scope="row">Sources</th>
+<td class="sources" data-state="pennsylvania"><a href="https://www.pa.gov/agencies/insurance/laws-regulations-notices/act-77-pharmacy-benefit-reform-act" rel="noopener">pa.gov</a><a href="https://www.pa.gov/agencies/insurance/licensing/company-licensing/pharmacy-benefit-registration" rel="noopener">pa.gov</a><a href="https://fastdemocracy.com/bill-search/pa/2025-2026/bills/PAB00041337/" rel="noopener">fastdemocracy.com</a></td>
+<td class="sources" data-state="virginia"><a href="https://law.lis.virginia.gov/vacodefull/title38.2/chapter34/article9/" rel="noopener">law.lis.virginia.gov</a><a href="https://law.lis.virginia.gov/vacode/title54.1/chapter34/section54.1-3442.02" rel="noopener">law.lis.virginia.gov</a><a href="https://law.lis.virginia.gov/uncodifiedacts/2026/session1/chapter887/" rel="noopener">law.lis.virginia.gov</a><a href="https://www.vpap.org/bills/84884" rel="noopener">vpap.org</a></td>
+<td class="sources" data-state="ohio"><a href="https://codes.ohio.gov/assets/laws/revised-code/authenticated/39/3957/3957.02/6-30-2026/3957.02-6-30-2026.pdf" rel="noopener">codes.ohio.gov</a><a href="https://codes.ohio.gov/ohio-revised-code/section-5167.24" rel="noopener">codes.ohio.gov</a><a href="https://codes.ohio.gov/ohio-revised-code/section-3701.88" rel="noopener">codes.ohio.gov</a><a href="https://ohiohouse.gov/legislation/136/hb890" rel="noopener">ohiohouse.gov</a></td>
+<td class="sources" data-state="maryland"><a href="https://insurance.maryland.gov/Insurer/Pages/PharmacyBenefitManagers.aspx" rel="noopener">insurance.maryland.gov</a><a href="https://pdab.maryland.gov/upper-payment-limits" rel="noopener">pdab.maryland.gov</a><a href="https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/SB0357?ys=2025RS" rel="noopener">mgaleg.maryland.gov</a><a href="https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/HB1056?ys=2024RS" rel="noopener">mgaleg.maryland.gov</a><a href="https://www.ca4.uscourts.gov/opinions/241939R1.U.pdf" rel="noopener">ca4.uscourts.gov</a></td>
+<td class="sources" data-state="georgia"><a href="https://law.justia.com/codes/georgia/title-33/chapter-64/" rel="noopener">law.justia.com</a><a href="https://oci.georgia.gov/node/5506" rel="noopener">oci.georgia.gov</a><a href="https://app.azure.legiplex.com/ga/legislature/2025/2025-r/bills/hb931" rel="noopener">app.azure.legiplex.com</a><a href="https://policyrisk.com/state-bill/GA-HB139-2025-2026" rel="noopener">policyrisk.com</a></td>
+</tr>
+<tr><th scope="row">Last updated</th>
+<td data-state="pennsylvania">2026-10-15</td>
+<td data-state="virginia">2026-10-15</td>
+<td data-state="ohio">2026-10-15</td>
+<td data-state="maryland">2026-10-15</td>
+<td data-state="georgia">2026-10-15</td>
+</tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="analysis" class="band">
+    <div class="wrap">
+      <div class="analysis">
+        <div>
+          <h2>What stands out</h2>
+          <h3>PBM rules are converging, at different speeds</h3>
+          <p>Every state licenses or registers PBMs, or will soon (Ohio's new license is required from July 2027), and states limit practices such as steering patients to PBM-owned pharmacies. Some states now regulate the pricing model itself: Virginia will require pass-through pricing and full rebate pass-through from 2027, while Pennsylvania's 2024 law orders a study of spread pricing.</p>
+          <h3>Public plans go first</h3>
+          <p>Ohio and Virginia use or are moving to a single Medicaid PBM, and Georgia set its pricing rules first for state and local government plans. States can set terms as purchasers before they set them as regulators.</p>
+          <h3>Drug price authority is the dividing line</h3>
+          <p>Maryland's board can cap what state and local government plans pay for a drug, with a path to wider use. Board bills were vetoed in Virginia, did not pass in Georgia, are pending in Ohio, and were not introduced in Pennsylvania this session.</p>
+          <h3>340B is moving to the courts and to study</h3>
+          <p>Maryland's contract pharmacy law is in effect while the full Fourth Circuit reconsiders a manufacturer challenge. Virginia created a work group, and Ohio required hospitals and clinics in the program to report how they use it.</p>
+          <h3>Reporting is the most common tool</h3>
+          <p>Where states have not set prices, they have asked for information: PBM transparency reports in Pennsylvania, manufacturer price reports in Virginia, payment reports in Georgia, and 340B reports in Ohio.</p>
+        </div>
+        <div>
+          <h2>What to watch</h2>
+          <ul class="watch">
+            <li>Pending: the full Fourth Circuit's rehearing of the challenge to Maryland's 340B contract pharmacy law (argument date not confirmed).</li>
+            <li>November 1, 2026: Virginia's 340B work group report.</li>
+            <li>December 31, 2026: Maryland's PBM workgroup report; Ohio's General Assembly session ends with HB 890 and the 340B bills in committee.</li>
+            <li>January 1, 2027: State and local government purchasers may begin applying Maryland's first upper payment limits, for Jardiance and Ozempic, if the regulations are final; they must apply them after January 1, 2028.</li>
+            <li>2027 sessions: whether Virginia's legislature takes up an affordability board a fourth time, and whether Pennsylvania's HB 2797 on 340B moves.</li>
+            <li>July 1, 2027: Virginia's pass-through pricing requirement and Ohio's PBM license requirement take effect.</li>
+          </ul>
+          <p class="question">The question I expect to shape the next cycle: whether states keep regulating the drug supply chain one link at a time, or start treating pricing across PBMs, manufacturers, and pharmacies as a single decision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap"><div class="measure">
+      <h2>How this was compiled</h2>
+      <p><strong>Scope.</strong> Five states, three areas: pharmacy benefit manager regulation, drug price authority and reporting, and 340B contract pharmacy laws. Each cell describes enacted law first and notes notable 2025–26 bills separately.</p>
+      <p><strong>Sources.</strong> Facts are drawn from statutes, session laws, legislative records, regulator and board pages, and court orders. Several legislature sites block automated access; where a bill's history comes from a site that copies official records, the source list links that copy. Where a detail rests on a secondary source, the table says "as reported." Where a detail could not be confirmed, the page says so rather than guessing.</p>
+      <p><strong>Neutrality.</strong> Drug manufacturers, PBMs, insurers, pharmacies, hospitals, and patient groups all have stakes in these laws. This page describes what states have decided and how, not whether those decisions are right.</p>
+      <p>The underlying data is in <a href="state-drug-supply-chain.csv">state-drug-supply-chain.csv</a>. This comparison is for policy analysis and is not legal or regulatory advice.</p>
+    </div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap measure">
+    <p>Compiled by Joshua Phoebus, former Director of Performance and Transformation in the Office of Pennsylvania Governor Tom Wolf. <a href="https://www.linkedin.com/in/joshuaphoebus">LinkedIn</a> · <a href="https://www.joshuaphoebusllc.com">Website</a> · <a href="https://jphoebus.github.io/">All projects</a></p>
+    <p>Part of a series on how states make decisions when an industry outgrows the existing rules. Related: <a href="https://jphoebus.github.io/state-payments-policy/">Is it a loan? How states set payments rules</a> · <a href="https://jphoebus.github.io/large-load-screening/">Which data center load counts</a> · <a href="https://jphoebus.github.io/large-load-tariffs/">Who pays for data center power</a> · <a href="https://jphoebus.github.io/data-center-legislation-2026/">What states changed on data centers in 2026</a> · <a href="https://jphoebus.github.io/state-incentive-comparison/">State data center incentives, compared</a> · <a href="https://jphoebus.github.io/data-center-exempt-equipment/">What counts as exempt data center equipment</a> · <a href="https://jphoebus.github.io/tax-incentive-evaluation/">How states check their tax incentives</a> · <a href="https://jphoebus.github.io/spark-grid-tracker/">DOE&#x27;s SPARK grid selections, tracked</a> · <a href="https://jphoebus.github.io/quantum-readiness/">Are state rules ready for quantum computing?</a></p>
+    <p>Each state's sources are listed in the table. Last updated October 15, 2026.</p>
+  </div>
+</footer>
+
+<script>
+  // Each state button shows or hides that state's column. The table itself is plain HTML,
+  // so it displays even if this script never runs.
+  document.querySelectorAll("#filters .chip").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var on = b.getAttribute("aria-pressed") === "true";
+      b.setAttribute("aria-pressed", on ? "false" : "true");
+      document.querySelectorAll('#table [data-state="' + b.dataset.state + '"]').forEach(function (c) { c.hidden = on; });
+    });
+  });
+</script>
+</body>
+</html>
