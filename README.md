@@ -1,6 +1,6 @@
 # Who Sets the Price of a Prescription? How Five States Regulate the Drug Supply Chain
 
-How Pennsylvania, Virginia, Ohio, Maryland, and Georgia regulate the businesses between a drug's manufacturer and the patient: pharmacy benefit managers, drug prices, and 340B contract pharmacy arrangements. Current as of October 16, 2026.
+How Pennsylvania, Virginia, Ohio, Maryland, and Georgia regulate the businesses between a drug's manufacturer and the patient: pharmacy benefit managers, drug prices, and 340B contract pharmacy arrangements. Current as of October 23, 2026.
 
 **Interactive version:** [jphoebus.github.io/state-drug-supply-chain](https://jphoebus.github.io/state-drug-supply-chain/)
 
