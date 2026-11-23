@@ -1,6 +1,6 @@
 # Who Sets the Price of a Prescription? How Five States Regulate the Drug Supply Chain
 
-How Pennsylvania, Virginia, Ohio, Maryland, and Georgia regulate the businesses between a drug's manufacturer and the patient: pharmacy benefit managers, drug prices, and 340B contract pharmacy arrangements. Current as of November 12, 2026.
+How Pennsylvania, Virginia, Ohio, Maryland, and Georgia regulate the businesses between a drug's manufacturer and the patient: pharmacy benefit managers, drug prices, and 340B contract pharmacy arrangements. Current as of November 23, 2026.
 
 **Interactive version:** [jphoebus.github.io/state-drug-supply-chain](https://jphoebus.github.io/state-drug-supply-chain/)
 
@@ -20,7 +20,7 @@ How Pennsylvania, Virginia, Ohio, Maryland, and Georgia regulate the businesses 
 ## What to watch
 
 - December 31, 2026: Maryland's PBM workgroup report; Ohio's session ends with HB 890 and the 340B bills in committee.
-- January 1, 2027: State and local government purchasers may begin applying Maryland's first upper payment limits (Jardiance, Ozempic), if the regulations are final; required after January 1, 2028.
+- January 1, 2027: State and local government purchasers may begin applying Maryland's first upper payment limits (Jardiance, Ozempic), if no problems arise in the state register review (as reported); required after January 1, 2028.
 - 2027 sessions: Virginia affordability board bills; Pennsylvania's HB 2797 on 340B.
 - July 1, 2027: Virginia's pass-through pricing requirement and Ohio's PBM license requirement take effect.
 - Pending: the full Fourth Circuit's rehearing of the challenge to Maryland's 340B contract pharmacy law.
